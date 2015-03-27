@@ -1,0 +1,21 @@
+/**
+ * Media Query Mixin
+ * 
+ * Let's you easily define a series of breakpoints & their related sizes. 
+ *
+ *
+ * @include media( sm ) {
+ *   [styles]
+ * }
+ */
+
+$breakpoints: ("sm": 40em, "md": 52em, "lg": 64em) !default;
+
+@mixin media( $ns ) {
+	$size: map-get( $breakpoints, $ns );
+
+	@media only screen and (min-width: #{$size}) {
+		@content;
+	}
+}
+
