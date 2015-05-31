@@ -1,0 +1,22 @@
+/**
+ * Aspect Ratio Mixin
+ * 
+ * Let's you easily define an element's dimensions constrained to a given aspect ratio. 
+ * Accepts a percentage, orientation & units as parameters.
+ *
+ *
+ * @include aspect-ratio( 75 ); 
+ * @include aspect-ratio( 75, h ); 
+ * @include aspect-ratio( 75, v, 1vmax ); 
+ *
+ */
+
+@mixin aspect-ratio( $percent, $orientation:'v', $unit: 1vmin) {
+  @if( $orientation == 'v') {
+    width: $percent * $unit;
+    height: 100 * $unit;
+  } @else {
+    width: 100 * $unit;
+    height: $percent * $unit;
+  }
+}
