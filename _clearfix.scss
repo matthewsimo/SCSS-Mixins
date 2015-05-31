@@ -1,0 +1,17 @@
+/**
+ * Clearfix Mixin
+ * 
+ * Let's you easily apply clearfix to an element with this placeholder. 
+ *
+ *
+ * @extend %clearfix; 
+ *
+ */
+
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
